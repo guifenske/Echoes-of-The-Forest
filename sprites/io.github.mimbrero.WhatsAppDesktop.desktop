@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=WhatsApp Desktop
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=whatsapp-desktop-linux io.github.mimbrero.WhatsAppDesktop
+Type=Application
+Icon=io.github.mimbrero.WhatsAppDesktop
+Comment=An unofficial WhatsApp client for Linux, built with Electron.
+Categories=Utility;Network;Chat;InstantMessaging;
+StartupWMClass=whatsapp-desktop-linux
+X-Flatpak=io.github.mimbrero.WhatsAppDesktop
