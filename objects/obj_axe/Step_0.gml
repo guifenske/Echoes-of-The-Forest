@@ -1,9 +1,9 @@
 #region movimento machado
 hsp = spd * global.machadodirection;
 
-if place_meeting(x + hsp, y, obj_bloco){
+if place_meeting(x + hsp, y, obj_terra){
 	
-	while !place_meeting(x + sign(hsp), y, obj_bloco){
+	while !place_meeting(x + sign(hsp), y, obj_terra){
 		x+= sign(hsp)
 	}
 	
@@ -15,11 +15,12 @@ if place_meeting(x + hsp, y, obj_bloco){
 	
 }
 
+
 x+=hsp
 
-if place_meeting(x + vsp, y, obj_bloco){
+if place_meeting(x, y + vsp, obj_grama){
 	
-	while !place_meeting(x + sign(vsp), y, obj_bloco){
+	while !place_meeting(x, y + sign(vsp), obj_grama){
 		x+= sign(vsp)
 	}
 	

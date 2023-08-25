@@ -40,9 +40,19 @@ hsp = global.move * spd + acc * global.move
 
 #region fisicas Gerais e movimento
 
-if place_meeting(x, y + vsp, obj_bloco){
+if place_meeting(x, y + vsp, obj_grama){
 	
-	while !place_meeting(x, y + sign(vsp), obj_bloco){
+	while !place_meeting(x, y + sign(vsp), obj_grama){
+		y+= sign(vsp)
+	}
+	
+	vsp = 0
+	
+}
+
+if place_meeting(x, y + vsp, obj_terra){
+	
+	while !place_meeting(x, y + sign(vsp), obj_terra){
 		y+= sign(vsp)
 	}
 	
@@ -52,9 +62,9 @@ if place_meeting(x, y + vsp, obj_bloco){
 
 y+=vsp
 
-if place_meeting(x + hsp, y, obj_bloco){
+if place_meeting(x + hsp, y, obj_terra){
 	
-	while !place_meeting(x + sign(hsp), y, obj_bloco){
+	while !place_meeting(x + sign(hsp), y, obj_terra){
 		x+= sign(hsp)
 	}
 	
@@ -63,11 +73,21 @@ if place_meeting(x + hsp, y, obj_bloco){
 	
 }
 
+if place_meeting(x + hsp, y, obj_grama){
+	
+	while !place_meeting(x + sign(hsp), y, obj_grama){
+		x+= sign(hsp)
+	}
+	
+	hsp = 0
+
+	
+}
 
 x+=hsp
 #endregion
 
-if place_meeting(x, y + 1, obj_bloco){
+if place_meeting(x, y + 1, obj_grama) || place_meeting(x, y + 1, obj_terra){
 	pulos = 2
 	
 	grav = 0.8
@@ -103,7 +123,7 @@ if keyboard_check_pressed(vk_space) && pulos > 0{
 	#region atirar machado
 	if (mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 		 
-		 if(!place_meeting(x, y - 100, obj_bloco)){ 
+		 if(!place_meeting(x, y - 100, obj_terra) || !place_meeting(x, y - 100, obj_grama)){ 
 			  global.machadodirection = global.move
 			  if (global.machadodirection == 0) global.machadodirection = 1;
 			 instance_create_layer(x, y - 100, "machado", obj_axe);
