@@ -5,10 +5,10 @@ if(global.move == 0) global.move = -keyboard_check(vk_left) + keyboard_check(vk_
 
 //Se tiver correndo, aumentar a velocidade, e tremer a tela
 if(keyboard_check(vk_shift)){
-	spd = 8
+	spd = 6
 	global.shake = true
 }	else{
-	spd = 6
+	spd = 4.5
 	global.shake = false
 }
 
@@ -98,8 +98,6 @@ if place_meeting(x, y + 1, obj_grama) || place_meeting(x, y + 1, obj_terra){
 	pulos = 2
 	
 	grav = 0.8
-	
-	canshow = 1
 
 }	else{
 	vsp += grav
@@ -131,9 +129,6 @@ if keyboard_check_pressed(vk_space) && pulos > 0{
 	
 	pulos -= 1
 		
-		//debug
-		if(pulos == 0) canshow = 0
-		
 }
 
 if(mouse_check_button_pressed(mb_right) && global.throwed_axe == false){
@@ -148,3 +143,5 @@ if(mouse_check_button_pressed(mb_right) && global.throwed_axe == false){
 if(mouse_check_button(mb_left) && global.throwed_axe == false){
 	
 }
+
+move_camera()

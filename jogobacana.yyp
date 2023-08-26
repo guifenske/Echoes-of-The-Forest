@@ -45,7 +45,6 @@
     {"id":{"name":"spr_player_machado","path":"sprites/spr_player_machado/spr_player_machado.yy",},},
     {"id":{"name":"spr_player_pulo","path":"sprites/spr_player_pulo/spr_player_pulo.yy",},},
     {"id":{"name":"spr_arvore","path":"sprites/spr_arvore/spr_arvore.yy",},},
-    {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"spr_ceu","path":"sprites/spr_ceu/spr_ceu.yy",},},
     {"id":{"name":"spr_player_double_machado","path":"sprites/spr_player_double_machado/spr_player_double_machado.yy",},},
     {"id":{"name":"spr_nuvem6","path":"sprites/spr_nuvem6/spr_nuvem6.yy",},},
