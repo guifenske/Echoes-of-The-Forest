@@ -1,8 +1,10 @@
+if global.cancelbreak == true && global._jafoialarm == false{
+	
 global.move = -keyboard_check(ord("A")) + keyboard_check(ord("D"))
 
 if(global.move == 0) global.move = -keyboard_check(vk_left) + keyboard_check(vk_right)
 
-
+	
 //Se tiver correndo, aumentar a velocidade, e tremer a tela
 if(keyboard_check(vk_shift)){
 	spd = 6
@@ -14,6 +16,7 @@ if(keyboard_check(vk_shift)){
 
 //Impondo o limite a acelaração
 if(acc < maxacc){
+	layer_sprite_speed(layer_sprite_get_id(layer_get_id("Instances"), sprite_get_name(sprite_index)), sprite_get_speed(sprite_index) + acc)
 	acc += accspd
 }
 
@@ -131,17 +134,33 @@ if keyboard_check_pressed(vk_space) && pulos > 0{
 		
 }
 
+if(pulos == 0 && global.throwed_axe == false)	sprite_index = spr_player_double_machado
+
+
 if(mouse_check_button_pressed(mb_right) && global.throwed_axe == false){
-	 if(!place_meeting(x, y - 100, obj_terra) || !place_meeting(x, y - 100, obj_grama)){ 
+	 if(!place_meeting(x, y - 100, obj_terra) && !place_meeting(x, y - 100, obj_grama)){ 
 		 global.machadodirection = global.move
 		 if (global.machadodirection == 0) global.machadodirection = 1;
 		 instance_create_layer(x, y - 100, "machado", obj_axe);
 		 global.throwed_axe = true 	
+		 
+		 if(pulos == 0 && sprite_index == spr_player_double_machado)	 sprite_index = spr_player_double
+		 
+		 
 	 }
+}	
+
+if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
+	if(global._jafoialarm == false && pulos == 2){
+		if(_check_tree()){
+		sprite_index = spr_player_cortar
+		alarm[0] = 335
+		global._jafoialarm = true
+		global.cancelbreak = false
+		}
+	}
 }
 
-if(mouse_check_button(mb_left) && global.throwed_axe == false){
-	
-}
+}	else sprite_index = spr_player_cortar
 
 move_camera()

@@ -36,6 +36,10 @@ global.throwed_axe = false
 //direção machado
 global.machadodirection = 0;
 
+global.cancelbreak = true
+
+global._jafoialarm = false
+
 move_camera = function(){
 	static width = camera_get_view_width(view_camera[0])
 	static height = camera_get_view_height(view_camera[0])
@@ -50,3 +54,79 @@ move_camera = function(){
 
 	camera_set_view_pos(view_camera[0], _camx, _camy);
 }
+
+_check_tree = function boolean(){
+	 if(place_meeting(x + 5, y, obj_arvore)){
+		with instance_place(x + 5, y, obj_arvore){
+			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
+		}
+		return true
+	}
+	else if(place_meeting(x - 5, y, obj_arvore)){
+		with instance_place(x - 5, y, obj_arvore){
+			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
+		}
+		return true
+	}	else if(place_meeting(x + 5, y, obj_arvore2)){
+		with instance_place(x + 5, y, obj_arvore2){
+			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
+		}
+		return true
+	}	else if(place_meeting(x - 5, y, obj_arvore2)){
+		with instance_place(x - 5, y, obj_arvore2){
+			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
+		}
+		return true
+	}	else if(place_meeting(x + 5, y, obj_arvore3)){
+		with instance_place(x + 5, y, obj_arvore3){
+			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
+		}
+		return true
+	}	else if(place_meeting(x - 5, y, obj_arvore3)){
+		with instance_place(x - 5, y, obj_arvore3){
+			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
+		}
+		return true
+	}else{
+		return false
+	}
+}
+
+_get_tree = function int(){
+	 if(place_meeting(x + 5, y, obj_arvore)){
+		with instance_place(x + 5, y, obj_arvore){
+			sprite_index = spr_arvore_caindo
+		}
+		return 1
+	}	else if(place_meeting(x - 5, y, obj_arvore)){
+		with instance_place(x - 5, y, obj_arvore){
+			sprite_index = spr_arvore_caindo
+		}
+		return 1
+	}	else if(place_meeting(x + 5, y, obj_arvore2)){
+		with instance_place(x + 5, y, obj_arvore2){
+			sprite_index = spr_arvore_caindo
+		}
+		return 1
+	}	else if(place_meeting(x - 5, y, obj_arvore2)){
+		with instance_place(x - 5, y, obj_arvore2){
+			sprite_index = spr_arvore_caindo
+		}
+		return 1
+	}	else if(place_meeting(x + 5, y, obj_arvore3)){
+		with instance_place(x + 5, y, obj_arvore3){
+			sprite_index = spr_arvore_caindo
+		}
+		return 1
+	}	else if(place_meeting(x - 5, y, obj_arvore3)){
+		with instance_place(x - 5, y, obj_arvore3){
+			sprite_index = spr_arvore_caindo
+		}
+		return 1
+	}
+	
+	else{
+		return 0
+	}
+}
+
