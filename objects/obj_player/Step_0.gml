@@ -1,4 +1,4 @@
-if global.cancelbreak == true && global._jafoialarm == false{
+if global.cancelbreak == true{
 	
 global.move = -keyboard_check(ord("A")) + keyboard_check(ord("D"))
 
@@ -151,12 +151,13 @@ if(mouse_check_button_pressed(mb_right) && global.throwed_axe == false){
 }	
 
 if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
-	if(global._jafoialarm == false && pulos == 2){
+	if(global.cancelbreak == true && pulos == 2){
 		if(_check_tree()){
-		sprite_index = spr_player_cortar
-		alarm[0] = 335
-		global._jafoialarm = true
-		global.cancelbreak = false
+			show_message(_arvoreid)
+			layer_element_move(_arvoreid, "tree_fall")
+			sprite_index = spr_player_cortar
+			alarm[0] = 335
+			global.cancelbreak = false
 		}
 	}
 }

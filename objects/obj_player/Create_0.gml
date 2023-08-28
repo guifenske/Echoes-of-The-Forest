@@ -27,6 +27,8 @@ accspd = 0.15
 //aceleração máxima
 maxacc = 4
 
+_arvoreid = 0
+
 //balançar tela(n funcionando, muito legal)
 global.shake = false
 
@@ -37,8 +39,6 @@ global.throwed_axe = false
 global.machadodirection = 0;
 
 global.cancelbreak = true
-
-global._jafoialarm = false
 
 move_camera = function(){
 	static width = camera_get_view_width(view_camera[0])
@@ -60,33 +60,24 @@ _check_tree = function boolean(){
 		with instance_place(x + 5, y, obj_arvore){
 			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
 		}
+		
+		_arvoreid = instance_place(x + 5, y, obj_arvore)
 		return true
 	}
 	else if(place_meeting(x - 5, y, obj_arvore)){
 		with instance_place(x - 5, y, obj_arvore){
 			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
 		}
+		
+		_arvoreid = instance_place(x - 5, y, obj_arvore)
 		return true
-	}	else if(place_meeting(x + 5, y, obj_arvore2)){
-		with instance_place(x + 5, y, obj_arvore2){
+	}	else if(place_meeting(x, y, obj_arvore)){
+		with instance_place(x, y, obj_arvore){
 			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
 		}
-		return true
-	}	else if(place_meeting(x - 5, y, obj_arvore2)){
-		with instance_place(x - 5, y, obj_arvore2){
-			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
-		}
-		return true
-	}	else if(place_meeting(x + 5, y, obj_arvore3)){
-		with instance_place(x + 5, y, obj_arvore3){
-			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
-		}
-		return true
-	}	else if(place_meeting(x - 5, y, obj_arvore3)){
-		with instance_place(x - 5, y, obj_arvore3){
-			if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
-		}
-		return true
+		_arvoreid = instance_place(x, y, obj_arvore)
+		
+		return true	
 	}else{
 		return false
 	}
@@ -97,35 +88,19 @@ _get_tree = function int(){
 		with instance_place(x + 5, y, obj_arvore){
 			sprite_index = spr_arvore_caindo
 		}
+		
 		return 1
 	}	else if(place_meeting(x - 5, y, obj_arvore)){
 		with instance_place(x - 5, y, obj_arvore){
 			sprite_index = spr_arvore_caindo
 		}
 		return 1
-	}	else if(place_meeting(x + 5, y, obj_arvore2)){
-		with instance_place(x + 5, y, obj_arvore2){
+	}	else if(place_meeting(x , y, obj_arvore)){
+		with instance_place(x, y, obj_arvore){
 			sprite_index = spr_arvore_caindo
 		}
 		return 1
-	}	else if(place_meeting(x - 5, y, obj_arvore2)){
-		with instance_place(x - 5, y, obj_arvore2){
-			sprite_index = spr_arvore_caindo
-		}
-		return 1
-	}	else if(place_meeting(x + 5, y, obj_arvore3)){
-		with instance_place(x + 5, y, obj_arvore3){
-			sprite_index = spr_arvore_caindo
-		}
-		return 1
-	}	else if(place_meeting(x - 5, y, obj_arvore3)){
-		with instance_place(x - 5, y, obj_arvore3){
-			sprite_index = spr_arvore_caindo
-		}
-		return 1
-	}
-	
-	else{
+	}	else{
 		return 0
 	}
 }
