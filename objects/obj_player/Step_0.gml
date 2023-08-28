@@ -15,10 +15,7 @@ if(keyboard_check(vk_shift)){
 }
 
 //Impondo o limite a acelaração
-if(acc < maxacc){
-	layer_sprite_speed(layer_sprite_get_id(layer_get_id("Instances"), sprite_get_name(sprite_index)), sprite_get_speed(sprite_index) + acc)
-	acc += accspd
-}
+if(acc < maxacc)	acc += accspd
 
 //Código de movimento geral
 hsp = global.move * spd + acc * global.move
@@ -153,8 +150,6 @@ if(mouse_check_button_pressed(mb_right) && global.throwed_axe == false){
 if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 	if(global.cancelbreak == true && pulos == 2){
 		if(_check_tree()){
-			show_message(_arvoreid)
-			layer_element_move(_arvoreid, "tree_fall")
 			sprite_index = spr_player_cortar
 			alarm[0] = 335
 			global.cancelbreak = false
