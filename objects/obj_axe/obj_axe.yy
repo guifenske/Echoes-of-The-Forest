@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_throwed_axe",
-    "path": "sprites/spr_throwed_axe/spr_throwed_axe.yy",
+    "name": "spr_axe_for_check",
+    "path": "sprites/spr_axe_for_check/spr_axe_for_check.yy",
   },
   "spriteMaskId": null,
   "visible": true,

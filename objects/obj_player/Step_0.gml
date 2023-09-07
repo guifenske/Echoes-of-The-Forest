@@ -74,8 +74,8 @@ x+=hsp
 if(pulos == 2){
 if(global.move == 0){
 	acc = 0
-	if(global.throwed_axe == false)	sprite_index = spr_player_machado
-	else	sprite_index = spr_player
+	if(global.throwed_axe == false)	sprite_index = spr_player_idle_machado
+	else	sprite_index = spr_player_idle
 	
 
 }
@@ -151,12 +151,20 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 	if(global.cancelbreak == true && pulos == 2){
 		if(_check_tree()){
 			sprite_index = spr_player_cortar
-			alarm[0] = 335
+			if(x > _arvoreid.x) image_xscale = -1.5
+			
+			alarm[0] = 350
 			global.cancelbreak = false
 		}
 	}
 }
 
-}	else sprite_index = spr_player_cortar
+}	else{
+	sprite_index = spr_player_cortar
+	if(mouse_check_button_pressed(mb_left)){
+		image_xscale = 1.5
+		global.cancelbreak = true
+	}
+}
 
 move_camera()

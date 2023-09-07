@@ -1,1 +1,0 @@
-if(sprite_index = spr_arvore_caindo) sprite_index = spr_arvore_toco
