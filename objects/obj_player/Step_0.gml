@@ -136,7 +136,6 @@ if(mouse_check_button(mb_right) && global.throwed_axe == false){
 	
 	_counter++
 	
-	image_xscale = 1.5
 	if(x > mouse_x) image_xscale = -1.5
 		
 	sprite_index = spr_player_thrown_axe_start
@@ -163,6 +162,37 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			global.cancelbreak = true
 		}
 	}	else{
+		
+		vsp += grav
+		
+		
+		if place_meeting(x, y + vsp, obj_grama){
+	
+			while !place_meeting(x, y + sign(vsp), obj_grama){
+				y+= sign(vsp)
+			}
+	
+			vsp = 0
+	
+		}
+
+		if place_meeting(x, y + vsp, obj_terra){
+	
+			while !place_meeting(x, y + sign(vsp), obj_terra){
+				y+= sign(vsp)
+			}
+	
+			vsp = 0
+	
+		}
+
+		y+=vsp
+		
+		if(x > mouse_x) image_xscale = -1.5
+		else image_xscale = 1.5
+		
+		
+		
 		if(mouse_check_button_released(mb_right) && global.throwed_axe == false){
 			sprite_index = spr_player_thrown_axe
 			global.machado_target_x = mouse_x
@@ -171,14 +201,10 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			global.player_x = x
 			global.player_y = y - 15
 			global.throwed_axe = true
-	
-			_counter = 0
 			
 			global.machadodirection = sign(image_xscale)
 			
 			instance_create_layer(x + 80 * sign(image_xscale),y,"machado", obj_throwed_axe)
-			
-			image_xscale = 1.5
 		}
 	}
 }
