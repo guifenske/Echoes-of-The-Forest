@@ -23,9 +23,9 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"obj_throwed_axe","order":11,"path":"objects/obj_throwed_axe/obj_throwed_axe.yy",},
     {"name":"spr_nuvem4","order":4,"path":"sprites/spr_nuvem4/spr_nuvem4.yy",},
     {"name":"spr_player_idle_machado","order":3,"path":"sprites/spr_player_idle_machado/spr_player_idle_machado.yy",},
-    {"name":"spr_axe_to_fall","order":3,"path":"sprites/spr_axe_to_fall/spr_axe_to_fall.yy",},
     {"name":"spr_player_pulo","order":4,"path":"sprites/spr_player_pulo/spr_player_pulo.yy",},
     {"name":"spr_arvore","order":1,"path":"sprites/spr_arvore/spr_arvore.yy",},
     {"name":"spr_player_double_machado","order":1,"path":"sprites/spr_player_double_machado/spr_player_double_machado.yy",},
@@ -39,6 +39,7 @@
     {"name":"obj_arvore2","order":8,"path":"objects/obj_arvore2/obj_arvore2.yy",},
     {"name":"spr_nuvem2","order":2,"path":"sprites/spr_nuvem2/spr_nuvem2.yy",},
     {"name":"spr_nuvem5","order":5,"path":"sprites/spr_nuvem5/spr_nuvem5.yy",},
+    {"name":"spr_axe_direita","order":4,"path":"sprites/spr_axe_direita/spr_axe_direita.yy",},
     {"name":"spr_player_thrown_axe_start","order":9,"path":"sprites/spr_player_thrown_axe_start/spr_player_thrown_axe_start.yy",},
     {"name":"spr_arbusto","order":3,"path":"sprites/spr_arbusto/spr_arbusto.yy",},
     {"name":"spr_player_pulo_direita","order":5,"path":"sprites/spr_player_pulo_direita/spr_player_pulo_direita.yy",},
@@ -63,6 +64,5 @@
     {"name":"spr_back","order":7,"path":"sprites/spr_back/spr_back.yy",},
     {"name":"obj_axe","order":5,"path":"objects/obj_axe/obj_axe.yy",},
     {"name":"spr_arvore_toco","order":5,"path":"sprites/spr_arvore_toco/spr_arvore_toco.yy",},
-    {"name":"spr_fallen_axe","order":2,"path":"sprites/spr_fallen_axe/spr_fallen_axe.yy",},
   ],
 }

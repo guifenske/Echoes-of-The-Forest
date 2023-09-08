@@ -30,6 +30,9 @@ maxacc = 4
 //id da arvore que irá quebrar OBS: pode ser nulo
 _arvoreid = noone
 
+//counter para contar os "ticks" até arremessar o machado
+_counter = 0
+
 //balançar tela(n funcionando, muito legal)
 global.shake = false
 
@@ -48,6 +51,14 @@ global.machado_target_x = 0
 //mouse_y
 global.machado_target_y = 0
 
+//player_x
+global.player_x = 0
+
+//player_y
+global.player_y = 0
+
+global._cair = false
+
 move_camera = function(){
 	static width = camera_get_view_width(view_camera[0])
 	static height = camera_get_view_height(view_camera[0])
@@ -61,6 +72,7 @@ move_camera = function(){
 	_vy = camera_get_view_y(view_camera[0])
 	instance_activate_region(_vx - 96, _vy, width + 150, height, true)
 	instance_deactivate_region(_vx - 96, _vy, width + 150, height, false, false)
+	instance_activate_layer("machado")
 		
 	var _camx = lerp(camera_get_view_x(view_camera[0]), _playerx, 0.06)
 	var _camy = lerp(camera_get_view_y(view_camera[0]), _playery, 0.06)

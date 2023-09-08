@@ -117,6 +117,11 @@
     {"name":"inst_258B5856","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_2BE691BE","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_7A897940","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_95519EB","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_28D820DF","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_1BE4C74B","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_591D2858","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_5A721466","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -233,6 +238,11 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_740D184C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":1056.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_FBC919E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":1056.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_258B5856","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":1056.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_95519EB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":802.0,"y":960.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_28D820DF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":802.0,"y":992.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1BE4C74B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":802.0,"y":896.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_591D2858","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":802.0,"y":928.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5A721466","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":802.0,"y":864.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"blocos_spr","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_5A5F44CD","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_terra","path":"sprites/spr_terra/spr_terra.yy",},"x":0.0,"y":1184.0,},

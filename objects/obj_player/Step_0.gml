@@ -1,4 +1,4 @@
-if global.cancelbreak == true{
+if global.cancelbreak == true && _counter == 0{
 	
 global.move = -keyboard_check(ord("A")) + keyboard_check(ord("D"))
 
@@ -21,7 +21,6 @@ if(acc < maxacc)	acc += accspd
 hsp = global.move * spd + acc * global.move
 
 #region fisicas Gerais e movimento
-
 if place_meeting(x, y + vsp, obj_grama){
 	
 	while !place_meeting(x, y + sign(vsp), obj_grama){
@@ -133,19 +132,15 @@ if keyboard_check_pressed(vk_space) && pulos > 0{
 
 if(pulos == 0 && global.throwed_axe == false)	sprite_index = spr_player_double_machado
 
-
-if(mouse_check_button_pressed(mb_right) && global.throwed_axe == false){
-	 if(!place_meeting(x, y - 100, obj_terra) && !place_meeting(x, y - 100, obj_grama)){ 
-		 global.machadodirection = global.move
-		 if (global.machadodirection == 0) global.machadodirection = 1;
-		 instance_create_layer(x, y - 100, "machado", obj_axe);
-		 global.throwed_axe = true 	
-		 
-		 if(pulos == 0 && sprite_index == spr_player_double_machado)	 sprite_index = spr_player_double
-		 
-		 
-	 }
-}	
+if(mouse_check_button(mb_right) && global.throwed_axe == false){
+	
+	_counter++
+	
+	image_xscale = 1.5
+	if(x > mouse_x) image_xscale = -1.5
+		
+	sprite_index = spr_player_thrown_axe_start
+}
 
 if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 	if(global.cancelbreak == true && pulos == 2){
@@ -160,10 +155,31 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 }
 
 }	else{
-	sprite_index = spr_player_cortar
-	if(mouse_check_button_pressed(mb_left)){
-		image_xscale = 1.5
-		global.cancelbreak = true
+	
+	if _counter == 0{
+		sprite_index = spr_player_cortar
+		if(mouse_check_button_pressed(mb_left)){
+			image_xscale = 1.5
+			global.cancelbreak = true
+		}
+	}	else{
+		if(mouse_check_button_released(mb_right) && global.throwed_axe == false){
+			sprite_index = spr_player_thrown_axe
+			global.machado_target_x = mouse_x
+			global.machado_target_y = mouse_y
+	
+			global.player_x = x
+			global.player_y = y - 15
+			global.throwed_axe = true
+	
+			_counter = 0
+			
+			global.machadodirection = sign(image_xscale)
+			
+			instance_create_layer(x + 80 * sign(image_xscale),y,"machado", obj_throwed_axe)
+			
+			image_xscale = 1.5
+		}
 	}
 }
 
