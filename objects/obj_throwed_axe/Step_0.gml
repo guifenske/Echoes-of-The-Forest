@@ -9,12 +9,14 @@ if place_meeting(x + hsp, y, obj_terra){
 	
 	_block_instance_id = instance_place(x + sign(hsp),y,obj_terra)
 	
+	if(block_faces(vsp, _block_instance_id, id) != 1){
+		with instance_create_layer(x + 14 * global.machadodirection,y,"machado", obj_axe){
+			alarm[0] = 700
+		}
+	}	else instance_create_layer(x + 14 * global.machadodirection,y,"machado", obj_axe)
+	
 	vsp = 0
 	hsp = 0
-	
-	with instance_create_layer(x + 15 * global.machadodirection,y,"machado", obj_axe){
-		alarm[0] = 700
-	}
 	
 	instance_destroy()
 }
@@ -44,14 +46,14 @@ if place_meeting(x, y + vsp, obj_terra){
 	
 	_block_instance_id = instance_place(x,y+sign(vsp),obj_terra)
 	
-	block_faces(vsp, _block_instance_id)
+	block_faces(vsp, _block_instance_id, id)
 	
 	if sign(vsp) == 1{
 		with instance_create_layer(x + 15 * global.machadodirection, y - 30, "machado", obj_axe){
 		if(sprite_index == spr_axe_direita)	image_angle = 270
 		else	image_angle = 90
 
-		if(sprite_index == spr_axe)	y-=7
+		if(sprite_index == spr_axe)	y-=9
 		else y-=8
 	}
 	}	else{
@@ -76,7 +78,7 @@ if(place_meeting(x, y + vsp, obj_grama)){
 		if(sprite_index == spr_axe_direita)	image_angle = 270
 		else	image_angle = 90
 
-		if(sprite_index == spr_axe)	y-=7
+		if(sprite_index == spr_axe)	y-=9
 		else y-=8
 	}
 	

@@ -158,6 +158,8 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 	if _counter == 0{
 		sprite_index = spr_player_cortar
 		if(mouse_check_button_pressed(mb_left)){
+			instance_create_layer(_arvoreid.x, _arvoreid.y, "arvores_front", obj_arvore)
+			instance_destroy(_arvoreid)
 			image_xscale = 1.5
 			global.cancelbreak = true
 		}
@@ -204,7 +206,9 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			
 			global.machadodirection = sign(image_xscale)
 			
-			instance_create_layer(x + 80 * sign(image_xscale),y,"machado", obj_throwed_axe)
+			if(!place_meeting(x + 94 * global.machadodirection,y,obj_terra) && !place_meeting(x + 94 * global.machadodirection,y,obj_grama)){
+				instance_create_layer(x + 94 * global.machadodirection,y,"machado", obj_throwed_axe)
+			}	else global.throwed_axe = false
 		}
 	}
 }
