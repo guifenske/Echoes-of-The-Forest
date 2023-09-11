@@ -9,3 +9,7 @@ if(sprite_index == spr_player_thrown_axe){
 	image_xscale = 1.5
 	_counter = 0
 }
+if(sprite_index == spr_player_bater_machado){
+	image_xscale = 1.5
+	_bater = 0
+}

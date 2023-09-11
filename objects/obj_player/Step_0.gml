@@ -1,4 +1,4 @@
-if global.cancelbreak == true && _counter == 0{
+if global.cancelbreak == true && _counter == 0 && _bater == 0{
 	
 global.move = -keyboard_check(ord("A")) + keyboard_check(ord("D"))
 
@@ -149,47 +149,53 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			
 			alarm[0] = 350
 			global.cancelbreak = false
+		}	else{
+			_bater = 1
+			sprite_index = spr_player_bater_machado
+			if(x > mouse_x) image_xscale = -1.5
 		}
 	}
 }
 
 }	else{
 	
+	vsp += grav
+		
+		
+	if place_meeting(x, y + vsp, obj_grama){
+	
+		while !place_meeting(x, y + sign(vsp), obj_grama){
+			y+= sign(vsp)
+		}
+	
+		vsp = 0
+	
+	}
+
+	if place_meeting(x, y + vsp, obj_terra){
+	
+		while !place_meeting(x, y + sign(vsp), obj_terra){
+			y+= sign(vsp)
+		}
+	
+		vsp = 0
+	
+	}
+
+	y+=vsp
+	
 	if _counter == 0{
-		sprite_index = spr_player_cortar
+		if(_bater == 1){
+			//mecanica de dano/glint sla
+		}	else{
 		if(mouse_check_button_pressed(mb_left)){
 			instance_create_layer(_arvoreid.x, _arvoreid.y, "arvores_front", obj_arvore)
 			instance_destroy(_arvoreid)
 			image_xscale = 1.5
 			global.cancelbreak = true
 		}
-	}	else{
-		
-		vsp += grav
-		
-		
-		if place_meeting(x, y + vsp, obj_grama){
-	
-			while !place_meeting(x, y + sign(vsp), obj_grama){
-				y+= sign(vsp)
-			}
-	
-			vsp = 0
-	
 		}
-
-		if place_meeting(x, y + vsp, obj_terra){
-	
-			while !place_meeting(x, y + sign(vsp), obj_terra){
-				y+= sign(vsp)
-			}
-	
-			vsp = 0
-	
-		}
-
-		y+=vsp
-		
+	}	else{		
 		if(x > mouse_x) image_xscale = -1.5
 		else image_xscale = 1.5
 		

@@ -33,6 +33,11 @@ _arvoreid = noone
 //counter para contar os "ticks" até arremessar o machado
 _counter = 0
 
+//bater
+_bater = 0
+
+_f_pressed = false
+
 //balançar tela(n funcionando, muito legal)
 global.shake = false
 
@@ -45,10 +50,10 @@ global.machadodirection = 0;
 //cancelar a quebra da árvore
 global.cancelbreak = true
 
-//mouse_x
+//mouse_x(machado)
 global.machado_target_x = 0
 
-//mouse_y
+//mouse_y(machado)
 global.machado_target_y = 0
 
 //player_x
@@ -57,7 +62,11 @@ global.player_x = 0
 //player_y
 global.player_y = 0
 
+//machado cair
 global._cair = false
+
+//se o jogo está pausado ou não
+global._pause = false
 
 move_camera = function(){
 	static width = camera_get_view_width(view_camera[0])
@@ -70,9 +79,13 @@ move_camera = function(){
 	
 	_vx = camera_get_view_x(view_camera[0])
 	_vy = camera_get_view_y(view_camera[0])
-	instance_activate_region(_vx - 96, _vy, width + 150, height, true)
-	instance_deactivate_region(_vx - 96, _vy, width + 150, height, false, false)
-	instance_activate_layer("machado")
+	
+	
+	//desativado por enquanto, arrumar uma solução para não desativar o bloco
+	//que o machado irá atingir
+//instance_activate_region(_vx - 96, _vy, width + 150, height, true)
+	//instance_deactivate_region(_vx - 96, _vy, width + 150, height, false, false)
+	//instance_activate_layer("machado")
 		
 	var _camx = lerp(camera_get_view_x(view_camera[0]), _playerx, 0.06)
 	var _camy = lerp(camera_get_view_y(view_camera[0]), _playery, 0.06)
@@ -101,7 +114,6 @@ _check_tree = function boolean(){
 
 _get_tree = function int(){
 	 if(_arvoreid != noone){
-		 
 		instance_create_layer(_arvoreid.x, _arvoreid.y, "tree_fall", obj_arvore_caindo)
 		layer_sprite_create("arvores_front", _arvoreid.x, _arvoreid.y, spr_arvore_toco)
 		instance_destroy(_arvoreid)
