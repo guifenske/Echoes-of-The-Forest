@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_player",
+  "name": "spr_player_idle",
   "bbox_bottom": 127,
   "bbox_left": 56,
   "bbox_right": 71,
@@ -56,7 +56,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_player",
+    "name": "spr_player_idle",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -78,8 +78,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c93d3abb-5b6b-44ed-8603-44d8bb302db4","path":"sprites/spr_player/spr_player.yy",},},},"Disabled":false,"id":"c8e22e2d-5e90-4ab1-8e53-a2cc82c4790a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"14956ec7-66c8-4b3f-a0c6-bf247fa5c873","path":"sprites/spr_player/spr_player.yy",},},},"Disabled":false,"id":"9f1e6f21-77e1-490c-aed3-cc930b8d1734","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c93d3abb-5b6b-44ed-8603-44d8bb302db4","path":"sprites/spr_player_idle/spr_player_idle.yy",},},},"Disabled":false,"id":"c8e22e2d-5e90-4ab1-8e53-a2cc82c4790a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"14956ec7-66c8-4b3f-a0c6-bf247fa5c873","path":"sprites/spr_player_idle/spr_player_idle.yy",},},},"Disabled":false,"id":"9f1e6f21-77e1-490c-aed3-cc930b8d1734","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
