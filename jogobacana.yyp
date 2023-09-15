@@ -43,7 +43,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.800.0.406",
+    "IDEVersion": "2023.2.1.75",
   },
   "resources": [
     {"id":{"name":"obj_button1","path":"objects/obj_button1/obj_button1.yy",},},
@@ -52,7 +52,6 @@
     {"id":{"name":"spr_nuvem4","path":"sprites/spr_nuvem4/spr_nuvem4.yy",},},
     {"id":{"name":"spr_player_idle_machado","path":"sprites/spr_player_idle_machado/spr_player_idle_machado.yy",},},
     {"id":{"name":"spr_player_pulo","path":"sprites/spr_player_pulo/spr_player_pulo.yy",},},
-    {"id":{"name":"rm_pause_menu","path":"rooms/rm_pause_menu/rm_pause_menu.yy",},},
     {"id":{"name":"spr_arvore","path":"sprites/spr_arvore/spr_arvore.yy",},},
     {"id":{"name":"spr_player_double_machado","path":"sprites/spr_player_double_machado/spr_player_double_machado.yy",},},
     {"id":{"name":"spr_nuvem6","path":"sprites/spr_nuvem6/spr_nuvem6.yy",},},
@@ -108,9 +107,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
-    {"roomId":{"name":"rm_pause_menu","path":"rooms/rm_pause_menu/rm_pause_menu.yy",},},
   ],
-  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],

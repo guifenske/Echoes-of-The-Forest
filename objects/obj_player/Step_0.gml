@@ -1,3 +1,6 @@
+if !global._pause{
+
+
 if global.cancelbreak == true && _counter == 0 && _bater == 0{
 	
 global.move = -keyboard_check(ord("A")) + keyboard_check(ord("D"))
@@ -217,6 +220,8 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			}	else global.throwed_axe = false
 		}
 	}
+	
 }
 
 move_camera()
+}

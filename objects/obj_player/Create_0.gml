@@ -83,7 +83,7 @@ move_camera = function(){
 	
 	//desativado por enquanto, arrumar uma solução para não desativar o bloco
 	//que o machado irá atingir
-//instance_activate_region(_vx - 96, _vy, width + 150, height, true)
+	//instance_activate_region(_vx - 96, _vy, width + 150, height, true)
 	//instance_deactivate_region(_vx - 96, _vy, width + 150, height, false, false)
 	//instance_activate_layer("machado")
 		

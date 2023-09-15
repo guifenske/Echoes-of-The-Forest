@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 global._pause = false
-room_goto(Room1)
+instance_activate_all()
+instance_destroy()
 
 
 
