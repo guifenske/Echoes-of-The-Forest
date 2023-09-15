@@ -4,7 +4,7 @@
   "name": "obj_button1",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":27,"eventType":9,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
   ],
   "managed": false,
   "overriddenProperties": [],
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_button1",
-    "path": "sprites/spr_button1/spr_button1.yy",
+    "name": "spr_button_play",
+    "path": "sprites/spr_button_play/spr_button_play.yy",
   },
   "spriteMaskId": null,
   "visible": true,

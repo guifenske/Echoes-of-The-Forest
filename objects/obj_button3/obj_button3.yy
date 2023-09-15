@@ -1,9 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_button2",
+  "name": "obj_button3",
   "eventList": [],
-  "managed": false,
+  "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "botoes",
@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_button_config",
-    "path": "sprites/spr_button_config/spr_button_config.yy",
+    "name": "spr_button_exit",
+    "path": "sprites/spr_button_exit/spr_button_exit.yy",
   },
   "spriteMaskId": null,
   "visible": true,

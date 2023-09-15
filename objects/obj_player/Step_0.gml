@@ -1,11 +1,11 @@
-if !global._pause{
-
-
 if global.cancelbreak == true && _counter == 0 && _bater == 0{
 	
-global.move = -keyboard_check(ord("A")) + keyboard_check(ord("D"))
+if !global._pause{
+	
+	global.move = -keyboard_check(ord("A")) + keyboard_check(ord("D"))
 
-if(global.move == 0) global.move = -keyboard_check(vk_left) + keyboard_check(vk_right)
+	if(global.move == 0) global.move = -keyboard_check(vk_left) + keyboard_check(vk_right)
+}	else	global.move = 0
 
 	
 //Se tiver correndo, aumentar a velocidade, e tremer a tela
@@ -118,6 +118,7 @@ if place_meeting(x, y + 1, obj_grama) || place_meeting(x, y + 1, obj_terra){
 
 }
 
+if !global._pause{
 //caso o player n tenha esgotado seus pulos e pressionou espaço
 if keyboard_check_pressed(vk_space) && pulos > 0{
 	
@@ -132,8 +133,11 @@ if keyboard_check_pressed(vk_space) && pulos > 0{
 	pulos -= 1
 		
 }
+}
 
 if(pulos == 0 && global.throwed_axe == false)	sprite_index = spr_player_double_machado
+
+if !global._pause{
 
 if(mouse_check_button(mb_right) && global.throwed_axe == false){
 	
@@ -158,6 +162,7 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			if(x > mouse_x) image_xscale = -1.5
 		}
 	}
+}
 }
 
 }	else{
@@ -224,4 +229,3 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 }
 
 move_camera()
-}

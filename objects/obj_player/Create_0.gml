@@ -6,6 +6,9 @@ spd = 4.5
 //velocidade horizontal
 hsp = 0
 
+//id botão play
+_id_button_play = noone
+
 //velocidade vertical
 vsp = 0
 
