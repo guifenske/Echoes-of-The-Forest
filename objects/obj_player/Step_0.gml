@@ -221,7 +221,7 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			global.machadodirection = sign(image_xscale)
 			
 			if(!place_meeting(x + 94 * global.machadodirection,y,obj_terra) && !place_meeting(x + 94 * global.machadodirection,y,obj_grama)){
-				instance_create_layer(x + 94 * global.machadodirection,y,"machado", obj_throwed_axe)
+				instance_create_layer(x,y,"machado", obj_throwed_axe)
 			}	else global.throwed_axe = false
 		}
 	}
