@@ -44,6 +44,8 @@ if place_meeting(x, y + vsp, obj_terra){
 
 y+= vsp
 }
+}else{
+	draw_self()
 }
 }else{
 	draw_self()
