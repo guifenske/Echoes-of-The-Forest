@@ -41,6 +41,8 @@ _bater = 0
 
 _f_pressed = false
 
+_enter_animation = false
+
 //balançar tela(n funcionando, muito legal)
 global.shake = false
 
@@ -70,6 +72,29 @@ global._cair = false
 
 //se o jogo está pausado ou não
 global._pause = false
+
+if(room_previous(room) == Room3){
+	_bater = 1
+	with obj_house sprite_index = spr_casa_porta_abrir
+	
+	//TO-DO: checar se o player ta com o machado
+	//
+	_enter_animation = true
+	
+	sprite_index = spr_player_direita_machado
+}
+
+
+_move_to_right_animation = function(){
+	if(x <= 600) x+= 4.5
+	else{
+		_bater = 0
+		_enter_animation = false
+	}
+}
+
+
+
 
 move_camera = function(){
 	static width = camera_get_view_width(view_camera[0])

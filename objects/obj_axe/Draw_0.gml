@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(room != Room3){
 if (global._cair){
+	if(!global._pause){
 	vsp = _gravity
 	_rotation += 3 * global.machadodirection
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, _rotation, c_white, 1)
@@ -41,6 +43,10 @@ if place_meeting(x, y + vsp, obj_terra){
 }
 
 y+= vsp
-}	else{
+}
+}else{
+	draw_self()
+}
+}else{
 	draw_self()
 }
