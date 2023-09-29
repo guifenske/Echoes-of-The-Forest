@@ -192,6 +192,8 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 
 	y+=vsp
 	
+	if(!_enter_animation){
+	
 	if _counter == 0{
 		if(_bater == 1){
 			//mecanica de dano/glint sla
@@ -225,6 +227,7 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 			}	else global.throwed_axe = false
 		}
 	}
+	}	else _move_to_right_animation()
 	
 }
 
