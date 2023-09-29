@@ -25,7 +25,7 @@ pulos = 2
 acc = 0
 
 //incremento para a aceleração
-accspd = 0.15
+accspd = 0.10
 
 //aceleração máxima
 maxacc = 4
@@ -125,7 +125,8 @@ _check_tree = function boolean(){
 	
 	if(instance_nearest(x,y,obj_arvore) == noone) return false
 	
-	if(point_distance(x,y,instance_nearest(x,y,obj_arvore).x, instance_nearest(x,y,obj_arvore).y) > 40) return false
+	if(point_distance(x,y,instance_nearest(x,y,obj_arvore).x, instance_nearest(x,y,obj_arvore).y) > 50) return false
+	if(point_distance(x,y,instance_nearest(x,y,obj_arvore).x, instance_nearest(x,y,obj_arvore).y) < 30) return false
 	
 	_arvoreid = instance_nearest(x,y,obj_arvore)
 	
