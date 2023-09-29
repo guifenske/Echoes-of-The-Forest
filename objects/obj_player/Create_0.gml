@@ -78,7 +78,7 @@ if(room_previous(room) == Room3){
 	with obj_house sprite_index = spr_casa_porta_abrir
 	
 	//TO-DO: checar se o player ta com o machado
-	//
+	
 	_enter_animation = true
 	
 	sprite_index = spr_player_direita_machado
@@ -93,28 +93,24 @@ _move_to_right_animation = function(){
 	}
 }
 
-
-
-
 move_camera = function(){
 	static width = camera_get_view_width(view_camera[0])
 	static height = camera_get_view_height(view_camera[0])
 	
-	var _playerx, _playery 
+	var _playerx, _playery
 		
 	_playerx = (x div width) * width
 	_playery = (y div height) * height - 200
+
 	
 	_vx = camera_get_view_x(view_camera[0])
 	_vy = camera_get_view_y(view_camera[0])
 	
 	
-	//desativado por enquanto, arrumar uma solução para não desativar o bloco
-	//que o machado irá atingir
-	//instance_activate_region(_vx - 96, _vy, width + 150, height, true)
-	//instance_deactivate_region(_vx - 96, _vy, width + 150, height, false, false)
-	//instance_activate_layer("machado")
-		
+	//TO-DO: arrumar uma solução para não desativar o bloco que o machado irá atingir
+	instance_activate_region(_vx - 64, _vy, width + 128, height, true)
+	instance_deactivate_region(_vx - 64, _vy, width + 128, height, false, false)
+
 	var _camx = lerp(camera_get_view_x(view_camera[0]), _playerx, 0.06)
 	var _camy = lerp(camera_get_view_y(view_camera[0]), _playery, 0.06)
 

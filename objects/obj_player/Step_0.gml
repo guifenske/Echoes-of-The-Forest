@@ -44,6 +44,16 @@ if place_meeting(x, y + vsp, obj_terra){
 	
 }
 
+if place_meeting(x, y + vsp, obj_escada_casa){
+	
+		while !place_meeting(x, y + sign(vsp), obj_escada_casa){
+			y+= sign(vsp)
+		}
+	
+		vsp = 0
+	
+	}
+
 y+=vsp
 
 if place_meeting(x + hsp, y, obj_terra){
@@ -60,6 +70,17 @@ if place_meeting(x + hsp, y, obj_terra){
 if place_meeting(x + hsp, y, obj_grama){
 	
 	while !place_meeting(x + sign(hsp), y, obj_grama){
+		x+= sign(hsp)
+	}
+	
+	hsp = 0
+
+	
+}
+
+if place_meeting(x + hsp, y, obj_escada_casa){
+	
+	while !place_meeting(x + sign(hsp), y, obj_escada_casa){
 		x+= sign(hsp)
 	}
 	
@@ -96,7 +117,7 @@ else{
 }
 #endregion
 
-if place_meeting(x, y + 1, obj_grama) || place_meeting(x, y + 1, obj_terra){
+if place_meeting(x, y + 1, obj_grama) || place_meeting(x, y + 1, obj_terra) || place_meeting(x, y + 1, obj_escada_casa){
 	pulos = 2
 	
 	grav = 0.8
@@ -183,6 +204,16 @@ if(mouse_check_button_pressed(mb_left) && global.throwed_axe == false){
 	if place_meeting(x, y + vsp, obj_terra){
 	
 		while !place_meeting(x, y + sign(vsp), obj_terra){
+			y+= sign(vsp)
+		}
+	
+		vsp = 0
+	
+	}
+	
+	if place_meeting(x, y + vsp, obj_escada_casa){
+	
+		while !place_meeting(x, y + sign(vsp), obj_escada_casa){
 			y+= sign(vsp)
 		}
 	

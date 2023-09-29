@@ -3,8 +3,8 @@
 
 if !global._pause{
 	global._pause = true
-	instance_create_layer((x div 1280) * 1280 + 500, 500, "menu_pause", obj_button1)
-	instance_create_layer((x div 1280) * 1280 + 500, 700, "menu_pause", obj_button2)
+	instance_create_layer((x div 1280) * 1280 + 500, 700, "menu_pause", obj_button1)
+	instance_create_layer((x div 1280) * 1280 + 500, 800, "menu_pause", obj_button2)
 	instance_create_layer((x div 1280) * 1280 + 500, 900, "menu_pause", obj_button3)
 }	else{
 	global._pause = false
