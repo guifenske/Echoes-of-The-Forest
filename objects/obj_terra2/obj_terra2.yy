@@ -1,9 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_escada_casa",
+  "name": "obj_terra2",
   "eventList": [],
-  "managed": true,
+  "managed": false,
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
@@ -26,9 +26,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_escada_casa",
-    "path": "sprites/spr_escada_casa/spr_escada_casa.yy",
+    "name": "spr_terra2",
+    "path": "sprites/spr_terra2/spr_terra2.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

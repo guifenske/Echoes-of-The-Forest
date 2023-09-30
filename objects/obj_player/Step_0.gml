@@ -84,6 +84,8 @@ if place_meeting(x + hsp, y, obj_escada_casa){
 		x+= sign(hsp)
 	}
 	
+	y-=8
+	
 	hsp = 0
 
 	

@@ -43,6 +43,8 @@ _f_pressed = false
 
 _enter_animation = false
 
+_can_enter_again = false
+
 //balançar tela(n funcionando, muito legal)
 global.shake = false
 
@@ -73,6 +75,8 @@ global._cair = false
 //se o jogo está pausado ou não
 global._pause = false
 
+global._entering_house = false
+
 if(room_previous(room) == Room3){
 	_bater = 1
 	with obj_house sprite_index = spr_casa_porta_abrir
@@ -90,6 +94,7 @@ _move_to_right_animation = function(){
 	else{
 		_bater = 0
 		_enter_animation = false
+		_can_enter_again = true
 	}
 }
 

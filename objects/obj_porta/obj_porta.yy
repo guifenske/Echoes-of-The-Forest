@@ -1,9 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_escada_casa",
+  "name": "obj_porta",
   "eventList": [],
-  "managed": true,
+  "managed": false,
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_escada_casa",
-    "path": "sprites/spr_escada_casa/spr_escada_casa.yy",
+    "name": "spr_porta",
+    "path": "sprites/spr_porta/spr_porta.yy",
   },
   "spriteMaskId": null,
   "visible": false,
