@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
 if(_can_enter_again){
 	_bater = 1
 
@@ -20,5 +19,3 @@ with obj_house{
 	instance_destroy(id)
 }
 }
-
-

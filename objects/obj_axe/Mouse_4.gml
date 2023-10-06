@@ -1,3 +1,4 @@
 /// @description Insert description here
 // You ca write your code in this editor
-room_goto(Room1)
+
+if (global._can_click_axe)	room_goto(Room1)

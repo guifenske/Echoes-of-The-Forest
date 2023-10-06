@@ -11,7 +11,7 @@ _cair = false
 
 if (global.machadodirection == 1) sprite_index = spr_axe_direita
 
-if(place_meeting(x, y, obj_terra)){
+if(place_meeting(x, y, obj_terra2)){
 	global.throwed_axe = false
 	instance_destroy()
 }

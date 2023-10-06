@@ -6,9 +6,6 @@ spd = 4.5
 //velocidade horizontal
 hsp = 0
 
-//id botão play
-_id_button_play = noone
-
 //velocidade vertical
 vsp = 0
 
@@ -31,7 +28,7 @@ accspd = 0.10
 maxacc = 4
 
 //id da arvore que irá quebrar OBS: pode ser nulo
-_arvoreid = noone
+global._arvoreid = noone
 
 //counter para contar os "ticks" até arremessar o machado
 _counter = 0
@@ -77,6 +74,9 @@ global._pause = false
 
 global._entering_house = false
 
+global._final_scene = false
+global._final_msg = false
+
 if(room_previous(room) == Room3){
 	_bater = 1
 	with obj_house sprite_index = spr_casa_porta_abrir
@@ -98,6 +98,7 @@ _move_to_right_animation = function(){
 	}
 }
 
+
 move_camera = function(){
 	static width = camera_get_view_width(view_camera[0])
 	static height = camera_get_view_height(view_camera[0])
@@ -113,8 +114,8 @@ move_camera = function(){
 	
 	
 	//TO-DO: arrumar uma solução para não desativar o bloco que o machado irá atingir
-	instance_activate_region(_vx - 64, _vy, width + 128, height, true)
-	instance_deactivate_region(_vx - 64, _vy, width + 128, height, false, false)
+	//instance_activate_region(_vx - 64, _vy, width + 128, height, true)
+//	instance_deactivate_region(_vx - 64, _vy, width + 128, height, false, false)
 
 	var _camx = lerp(camera_get_view_x(view_camera[0]), _playerx, 0.06)
 	var _camy = lerp(camera_get_view_y(view_camera[0]), _playery, 0.06)
@@ -123,31 +124,59 @@ move_camera = function(){
 }
 
 _check_tree = function boolean(){
-	
-	if(instance_nearest(x,y,obj_arvore) == noone) return false
+	if(instance_nearest(x,y,obj_arvore) == noone)	return false
 	
 	if(point_distance(x,y,instance_nearest(x,y,obj_arvore).x, instance_nearest(x,y,obj_arvore).y) > 50) return false
 	if(point_distance(x,y,instance_nearest(x,y,obj_arvore).x, instance_nearest(x,y,obj_arvore).y) < 30) return false
 	
-	_arvoreid = instance_nearest(x,y,obj_arvore)
+	global._arvoreid = instance_nearest(x,y,obj_arvore)
 	
-	with _arvoreid	if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
+	with global._arvoreid	if(sprite_index == spr_arvore_caindo || sprite_index == spr_arvore_toco) return false
 		
 	_xx = instance_nearest(x,y,obj_arvore).x
 	_yy = instance_nearest(x,y,obj_arvore).y
 		
-	instance_destroy(_arvoreid)
+	instance_destroy(global._arvoreid)
 		
-	_arvoreid = instance_create_layer(_xx, _yy, "tree_fall", obj_arvore)
+	global._arvoreid = instance_create_layer(_xx, _yy, "tree_fall", obj_arvore)
 	return true
 }
 
 _get_tree = function int(){
-	 if(_arvoreid != noone){
-		instance_create_layer(_arvoreid.x, _arvoreid.y, "tree_fall", obj_arvore_caindo)
-		layer_sprite_create("arvores_front", _arvoreid.x, _arvoreid.y, spr_arvore_toco)
-		instance_destroy(_arvoreid)
+	 if(global._arvoreid != noone){
+		instance_create_layer(global._arvoreid.x, global._arvoreid.y, "tree_fall", obj_arvore_caindo)
+		layer_sprite_create("arvores_front", global._arvoreid.x, global._arvoreid.y, spr_arvore_toco)
+		instance_destroy(global._arvoreid)
 		return 1
 	}
 }
 
+
+_tree_tip = function boolean(){
+	if(global.cancelbreak){
+	if(instance_nearest(x,y,obj_arvore) == noone) return false
+	
+	global._arvoreid = instance_nearest(x, y, obj_arvore)
+	
+	if(global._arvoreid.sprite_index != spr_arvore && global._arvoreid.sprite_index != spr_arvore_glint) return false
+	
+	if(point_distance(x,y,instance_nearest(x,y,obj_arvore).x, instance_nearest(x,y,obj_arvore).y) > 50){
+		if(global._arvoreid.sprite_index == spr_arvore_glint) global._arvoreid.sprite_index = spr_arvore
+		global._arvoreid = noone
+		return false
+	}
+	
+	if(point_distance(x,y,instance_nearest(x,y,obj_arvore).x, instance_nearest(x,y,obj_arvore).y) < 30){
+		if(global._arvoreid.sprite_index == spr_arvore_glint) global._arvoreid.sprite_index = spr_arvore
+		global._arvoreid = noone
+		return false
+	}
+	
+	global._arvoreid.sprite_index = spr_arvore_glint
+	
+	if(!instance_exists(obj_balao_text)){
+		instance_create_layer(120, 600, "arvores_front", obj_balao_text)
+	}
+		return true
+	}
+}
