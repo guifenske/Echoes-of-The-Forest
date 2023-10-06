@@ -15,7 +15,7 @@ function block_faces(argument0, argument1, argument2){
 			return 0	
 		}
 			
-		for(i = -2; i < 34; i++){
+		for(i = -2; i < 258; i++){
 			if(collision_point(x + i,y + 33, obj_throwed_axe, false, false)){
 				global._cair = true
 				return 1
